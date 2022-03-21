@@ -1,0 +1,162 @@
+.header {
+  display: block;
+  padding-top: 1rem;
+  width: 100%;
+
+  &.open {
+
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+    
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+    
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-image: linear-gradient($black, transparent);
+  }
+
+  nav {
+    position: relative;
+    padding: 0.5rem 2rem;
+    background-color: $black;
+
+    @include breakpoint-up (medium) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    @include breakpoint-up (large) {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+
+    @include breakpoint-up (xl) {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+  }
+  
+  &__logo {
+    position: relative;
+    margin-left: 0;
+    height: 36px;
+    width: 36px;
+    background-image: url(/assets/images/logosvg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include breakpoint-up (medium) {
+      height: 48px;
+      width: 48px;
+    }
+
+    @include breakpoint-up (large) {
+      height: 55px;
+      width: 55px;
+    }
+  }
+
+  &__toggle { // mobile hamburger
+    > span {
+      display: block;
+      width: 26px;
+      height: 4px;
+      background-color: $l-blue;
+      transition: all 300ms ease-in-out;
+      transform-origin: 1px 2px;
+
+      &:not(:last-child){
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    background: rgba($black, 1);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    
+    a {
+      position: relative;
+      display: block;
+      text-align: center;
+      font-size: $font-m;
+      font-weight: 800;
+      color: $l-blue;
+      transition: color 300ms ease-in-out;
+      margin-top: 5rem;
+  
+      @include breakpoint-up (medium) {
+        font-size: $font-l;
+        margin-top: 6rem;
+      }
+
+      &:hover {
+        color: $orange;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__links {
+    margin-right: 0;
+
+    a {
+      position: relative;
+      font-size: $font-m;
+      font-weight: 800;
+      color: $l-blue;
+      transition: color 300ms ease-in-out;
+
+      @include breakpoint-up (xl) {
+        font-size: $font-l;
+      }
+
+      &::before{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 5px;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        background: linear-gradient(to right, $orange, $black);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+    
+      &:not(:last-child){
+        margin-right: 2rem;
+      }
+
+      &:hover {
+        color: $orange;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

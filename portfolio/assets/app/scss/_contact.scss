@@ -1,0 +1,270 @@
+.contact {
+  margin-top: 4rem;
+  background-color: $d-blue;
+  border-radius: 20px;
+  color: $white;
+  text-align: center;
+
+  @include breakpoint-up (large) {
+    margin-top: 6rem;
+  }
+  
+  @include breakpoint-up (xl) {
+    margin-top: 8rem;
+  }  
+
+  h3 {
+    font-size: $font-s;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+  }
+
+  &__container__img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(/assets/images/bg-info.svg);
+    background-size: 300px 400px;
+    background-position: 55% 50%;
+    background-repeat: no-repeat;
+
+    @include breakpoint-up (large) {
+      background-size: cover;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      transform: rotate(45deg);
+      top: 450px;
+      right: -13px;
+      background-color: $l-blue;
+    }
+
+    .circle {
+      border-radius: 50%;
+      background: linear-gradient(135deg, transparent 20%, $l-blue);
+      position: absolute;
+    }
+
+    .c1 {
+      width: 220px;
+      height: 220px;
+      top: 450px;
+      right: 25px;
+
+      @include breakpoint-up (large) {
+        width: 160px;
+        height: 160px;
+        top: 470px;
+      }
+    }
+
+    .c2 {
+      width: 60px;
+      height: 60px;
+      top: 20px;
+      right: 30px;
+      background: linear-gradient(50deg, transparent 20%, $l-blue);
+
+      @include breakpoint-up (large) {
+        width: 120px;
+        height: 120px;
+        top: 70px;
+        right: 15px;
+      }
+
+      @include breakpoint-up (xl) {
+        right: 100px;
+      }
+    }
+
+    .c3 {
+      width: 100px;
+      height: 100px;
+      top: 40px;
+      right: 150px;
+      background: linear-gradient(320deg, transparent 20%, $l-blue);
+
+      @include breakpoint-up (medium) {
+        right: 230px;
+      }
+
+      @include breakpoint-up (large) {
+        opacity: 0;
+      }
+    }
+
+    .c4 {
+      width: 320px;
+      height: 320px;
+      top: 280px;
+      opacity: 0;
+      right: 800px;
+      background: linear-gradient(280deg, transparent 20%, $l-blue);
+
+      @include breakpoint-up (xl) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__container__form {
+    position: relative;
+    background-color: $l-blue;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      transform: rotate(45deg);
+      top: 50px;
+      left: -13px;
+      background-color: $d-blue;
+    }
+
+    .circle {
+      border-radius: 50%;
+      background: linear-gradient(135deg, transparent 20%, $d-blue);
+      position: absolute;
+    }
+
+    .c1 {
+      width: 180px;
+      height: 180px;
+      top: 300px;
+      right: -40px;
+
+      @include breakpoint-up (large) {
+        width: 300px;
+        height: 300px;
+        top: 200px;
+      }
+    }
+
+    .c2 {
+      width: 80px;
+      height: 80px;
+      top: 130px;
+      right: 5px;
+
+      @include breakpoint-up (large) {
+        width: 140px;
+        height: 140px;
+        top: 50px;
+        right: 130px;
+      }
+    }
+
+    .input {
+      color: $orange;
+    }
+
+    .input--container {
+      position: relative;
+      margin: 1rem 0;
+
+      label {
+        position: absolute;
+        top: 30%;
+        left: 15px;
+        padding: 0 0.5rem;
+        transform: translateY(-50%);
+        color: $orange;
+        font-size: $font-xs;
+        pointer-events: none;
+        z-index: 1000;
+        transform: 0.5s;
+      }
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 25px;
+        padding: 0 0.5rem;
+        transform: translateY(-50%);
+        color: transparent;
+        pointer-events: none;
+        z-index: 500;
+
+        &::before, &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 10%;
+          height: 5px;
+          opacity: 0;
+          transition: .3s;
+          transform: translateY(-50%);
+          background-color: $l-blue;
+        }
+
+        &::before {
+          left: 50%;
+        }
+
+        &::after {
+          right: 50%;
+        }
+      }
+    }
+
+    .focus > label {
+      top: 0;
+      left: 25px;
+      transform: translateY(-50%);
+    }
+
+    .focus > span::before, .focus > span::after{
+      width: 50%;
+      opacity: 1;
+    }
+
+    .textarea > label {
+      top: 1rem;
+      transform: translateY(0);
+    }
+
+    .btn {
+      padding: 0.6rem 1.3rem;
+      margin: 0;
+      background-color: $orange;
+      border: 2px solid $d-blue;
+      color: $white;
+      border-radius: 25px;
+      outline: none;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: $d-blue;
+      }
+    }
+  }
+
+  form {
+    padding: 1.5rem;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+    max-width: 450px;
+    max-height: 540px;
+
+    @include breakpoint-up (xl) {
+      max-width: 650px;
+    }
+  }
+}

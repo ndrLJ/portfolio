@@ -1,0 +1,140 @@
+.tech {
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 3rem;
+  background-color: $d-blue;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+
+  @include breakpoint-up (medium) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5rem;
+  }
+
+  @include breakpoint-up (large) {
+    padding-top: 6rem;
+  }
+
+  &__card {
+    position: relative;
+    height: 33rem;
+    width: 16rem;
+    margin-top: 3rem;
+    padding-bottom: 16rem;
+    perspective: 110rem;
+    -moz-perspective: 110rem;
+    background-color: rgba($l-blue, 0.95);
+    color: $white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 20px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border: 3px solid $orange;
+
+    &:last-child {
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint-up (medium) {
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      font-size: $font-s;
+      color: $orange;
+
+      @include breakpoint-up (large) {
+        font-size: $font-m;
+      }
+    }
+
+    @include breakpoint-up (medium) {
+      width: 11rem;
+      margin-left: 0.5rem;
+      
+      &:last-child {
+        margin-right: 0.5rem;
+      }
+    }
+
+    @include breakpoint-up (medium-l) {
+      width: 15rem;
+      margin-left: 1.5rem;
+
+      &:last-child {
+        margin-right: 1.5rem;
+      }
+    }
+
+    @include breakpoint-up (large) {
+      width: 14rem;
+      margin-left: 4rem;
+      
+      &:last-child {
+        margin-right: 4rem;
+      }
+    }
+
+    @include breakpoint-up (xl) {
+      width: 18rem;
+      margin-left: 6rem;
+      
+      &:last-child {
+        margin-right: 6rem;
+      }
+    }
+
+    @include breakpoint-up (xxl) {
+      width: 18rem;
+      margin-left: 14rem;
+      
+      &:last-child {
+        margin-right: 14rem;
+      }
+    }
+
+    &__picture {
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 6rem;
+      background-blend-mode: color;
+
+      &--1 {
+        background-image: linear-gradient(to bottom, $white, $l-blue 0.95), url(/assets/images/card1.svg);
+        background-position: 50% 50%;
+      }
+
+      &--2 {
+        background-image: linear-gradient(to bottom, $white, $l-blue 0.95), url(/assets/images/card2.svg);
+        background-position: 50% 50%;
+      }
+
+      &--3 {
+        background-image: linear-gradient(to bottom, $white, $l-blue 0.95), url(/assets/images/card3.svg);
+        background-position: 50% 50%;
+      }
+    }
+
+    &__text {
+      
+      ul {
+        width: 80%;
+        padding-inline-start: 40px;
+        margin-left: 0.3rem;
+      }
+
+      li {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        font-weight: 300;
+
+        &:not(:last-child) {
+          border-bottom: 2px solid rgba($orange, 1);
+        }
+      }
+    }
+  }
+}

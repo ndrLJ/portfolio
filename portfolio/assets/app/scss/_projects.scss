@@ -1,0 +1,124 @@
+.projects {
+  margin-top: 4rem;
+  height: 45rem;
+  background-color: $d-blue;
+  border-radius: 20px;
+
+  @include breakpoint-up (large) {
+    height: 30rem;
+  }
+
+  h3 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: $orange;
+    text-align: center;
+  }
+
+  &__container {
+    flex-direction: column;
+
+    @include breakpoint-up (large) {
+      flex-direction: row;
+    }
+
+    h4 {
+      padding-top: 1rem;
+      color: $orange;
+      font-size: $font-m;
+
+      @include breakpoint-up (large) {
+        font-size: $font-l;
+      }
+    }
+
+    p {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    a {
+      display: inline-block;
+      width: 5rem;
+      padding: 0.4rem;
+      color: $white;
+      background: $orange;
+      border-radius: 50px;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+      @include breakpoint-up (large) {
+        width: 7rem;
+      }
+
+      &:hover {
+        color: $orange;
+        background: $white;
+        transition: all .5s;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+
+        @include breakpoint-up (large) {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    &__terrasa {
+      height: 17rem;
+      width: 17rem;
+      background-color: $l-blue;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 20px 20px, rgba(0, 0, 0, 0.35) 0px 6px 6px;
+
+      @include breakpoint-up (large) {
+        height: 20rem;
+        width: 20rem;
+        margin-right: 2rem;
+      }
+
+      @include breakpoint-up (xl) {
+        margin-right: 4rem;
+      }
+
+      .svg {
+        padding-top: 1rem;
+      }
+    }
+
+    &__kulturbunt {
+      margin-top: 2rem;
+      height: 17rem;
+      width: 17rem;
+      background-color: $l-blue;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 20px 20px, rgba(0, 0, 0, 0.35) 0px 6px 6px;
+
+      @include breakpoint-up (large) {
+        margin-top: 0;
+        margin-left: 2rem;
+        height: 20rem;
+        width: 20rem;
+      }
+
+      @include breakpoint-up (xl) {
+        margin-left: 4rem;
+      }
+
+      .svg {
+        padding-top: 1rem;
+      }
+    }
+  }
+
+  @include breakpoint-up (large) {
+    margin-top: 6rem;
+  }
+  
+  @include breakpoint-up (xl) {
+    margin-top: 8rem;
+  }  
+}

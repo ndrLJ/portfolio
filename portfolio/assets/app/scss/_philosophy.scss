@@ -1,0 +1,122 @@
+.philosophy {
+  margin-top: 4rem;
+  background-color: $d-blue;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: $white;
+  text-align: center;
+
+  @include breakpoint-up (large) {
+    margin-top: 6rem;
+  }
+  
+  @include breakpoint-up (xl) {
+    margin-top: 8rem;
+  }  
+  
+  h3 {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+
+    @include breakpoint-up (medium) {
+      padding-right: 4rem;
+      padding-left: 4rem;
+    }
+
+    @include breakpoint-up (large) {
+      padding-right: 6rem;
+      padding-left: 6rem;
+      padding-bottom: 4rem;
+    }
+
+    @include breakpoint-up (xl) {
+      padding-right: 15rem;
+      padding-left: 15rem;
+    }
+  }
+
+  p {
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+    @include breakpoint-up (medium) {
+      padding-right: 3rem;
+      padding-left: 3rem;
+    }
+
+    @include breakpoint-up (large) {
+      padding-right: 4rem;
+      padding-left: 4rem;
+    }
+
+    @include breakpoint-up (xl) {
+      padding-right: 6rem;
+      padding-left: 6rem;
+    }
+  }
+
+  span {
+    color: $orange;
+  }
+
+  &__container {
+    flex-direction: column;
+
+    @include breakpoint-up (medium) {
+      flex-direction: row;
+    }
+  }
+
+  &__container__txt {
+    width: 100%;
+    height: 12rem;
+    padding-top: 2rem;
+    background-color: $d-blue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    @include breakpoint-up (medium) {
+      height: 22rem;
+      padding-top: 4rem;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 20px;
+    }
+
+    @include breakpoint-up (medium-l) {
+      height: 22rem;
+      padding-top: 6rem;
+    }
+
+    @include breakpoint-up (large) {
+      height: 35rem;
+      padding-top: 10rem;
+    }
+
+    @include breakpoint-up (xl) {
+      padding-top: 12rem;
+    }
+  }
+
+  &__container__img {
+    width: 100%;
+    height: 18rem;
+    background-image: url(/assets/images/bg-philosophy.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include breakpoint-up (medium) {
+      height: 22rem;
+      background-position: 50% 50%;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 20px;
+      background-size: cover;
+    }
+
+    @include breakpoint-up (large) {
+      height: 35rem;
+      background-position: 40% 50%;
+    }
+  }
+}

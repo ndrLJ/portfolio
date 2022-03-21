@@ -1,0 +1,35 @@
+.footer {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  
+  &__avatar {
+    height: 8rem;
+    width: 8rem;
+    background-image: url(/assets/images/avatar.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:hover {
+      animation: spin 3s infinite;
+    }
+  }
+
+  &__social1, &__social2 {
+    width: 4rem;
+    height: 4rem;
+    background-color: $l-blue;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $orange;
+    }
+  }
+
+  &__social1 {
+    margin-right: 2rem;
+  }
+
+  &__social2 {
+    margin-left: 2rem;
+  }
+}
