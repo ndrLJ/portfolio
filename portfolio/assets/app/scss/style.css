@@ -311,8 +311,14 @@ textarea {
 
 .header {
   display: block;
-  padding-top: 1rem;
   width: 100%;
+}
+
+.header #navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 .header.open .header__toggle > span:first-child {
